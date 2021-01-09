@@ -1,0 +1,182 @@
+------------------------------------
+test for 0. Integers addition
+------------------------------------
+
+function that adds 2 integers, any data type different of integer
+or float will to ocurred a error
+
+import function
+-------------------------------------
+>>> add_integer = __import__("0-add_integer").add_integer
+
+-------------------------------------
+
+add two Integers
+-------------------------------------
+
+    >>> add_integer(5, 2)
+    7
+
+    >>> add_integer(5, -8)
+    -3
+
+    >>> add_integer(-2, -2)
+    -4
+
+-------------------------------------
+
+add a integer with a float or two float
+-------------------------------------
+
+    >>> add_integer(3.5, 3)
+    6
+
+    >>> add_integer(1.2, 2.2)
+    3
+
+    >>> add_integer(1, 1.5)
+    2
+
+-------------------------------------
+
+add the integer with a character or string
+-------------------------------------
+
+    >>> add_integer('c', 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer("holberton", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, 'c')
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(7, "school")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+-------------------------------------
+
+add the integer with a list or tuple
+-------------------------------------
+
+    >>> add_integer([5, 2], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer((7, 1), 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(5, [4, 6])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(1, (9, 5))
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+-------------------------------------
+
+add the integer with a set or dict
+-------------------------------------
+
+    >>> add_integer({9, 4}, 8)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer({"name": any}, 8)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(3, {9, 1})
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(4, {"name": any})
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+-------------------------------------
+
+add a integer with None
+-------------------------------------
+
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+-------------------------------------
+
+when the second argument missing
+-------------------------------------
+
+    >>> add_integer(10)
+    108
+
+    >>> add_integer(2.0)
+    100
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer("Hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer({"name": any})
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer([1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer((1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer({1, 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+-------------------------------------
+
+when not found any argument
+-------------------------------------
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes at least 1 argument (0 given)
+
+-------------------------------------
