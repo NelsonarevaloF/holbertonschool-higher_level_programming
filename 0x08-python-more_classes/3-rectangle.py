@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""String representation"""
+
+
 class Rectangle:
     """class that defines a rectangle"""
     def __init__(self, width=0, height=0):
