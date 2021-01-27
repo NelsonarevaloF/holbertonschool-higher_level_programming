@@ -17,10 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """getter width"""
         return self.__width
 
     @width.setter
     def width(self, v_width):
+        """setter width"""
         if type(v_width) is not int:
             raise TypeError("width must be an integer")
         elif v_width <= 0:
@@ -30,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter height"""
         return self.__height
 
     @height.setter
     def height(self, v_height):
+        """setter height"""
         if type(v_height) is not int:
             raise TypeError("height must be an integer")
         elif v_height <= 0:
@@ -43,10 +47,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """getter x"""
         return self.__x
 
     @x.setter
     def x(self, v_x):
+        """setter x"""
         if type(v_x) is not int:
             raise TypeError("x must be an integer")
         elif v_x < 0:
@@ -56,10 +62,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter y"""
         return self.__y
 
     @y.setter
     def y(self, v_y):
+        """setter y"""
         if type(v_y) is not int:
             raise TypeError("y must be an integer")
         elif v_y < 0:
@@ -68,9 +76,11 @@ class Rectangle(Base):
             self.__y = v_y
 
     def area(self):
+        """getter area"""
         return (self.width * self.height)
 
     def display(self):
+        """shows a representation of rectangle with #"""
         print('\n' * self.y, end="")
         for i in range(self.height):
             print(" " * self.x, end="")
@@ -79,11 +89,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        '''override the __str__ method so that it returns'''
         ret = "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}"
         return ret.format(self.__class__.__name__,
                           self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args,  **kwargs):
+        '''Update the class Rectangle'''
         AttList = ["id", "width", "height", "x", "y"]
         size_list = len(AttList)
         cont = 0
@@ -101,3 +113,9 @@ class Rectangle(Base):
                         super().__init__(value)
                     else:
                         setattr(self, key, value)
+
+    def to_dictionary(self):
+        '''returns a dictionary with the variables'''
+        dic = {'id': self.id, 'width': self.width,
+               'height': self.height, 'x': self.x, 'y': self.y}
+        return dic
