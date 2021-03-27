@@ -13,7 +13,6 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=arg[1],
                          passwd=arg[2], db=arg[3])
     cur = db.cursor()
-    filter_name = arg[4]
 
     cur.execute("SELECT * FROM states WHERE name='{:s}'"
                 "ORDER BY states.id ASC;".format(arg[4]))
