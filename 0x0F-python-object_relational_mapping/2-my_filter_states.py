@@ -15,8 +15,8 @@ if __name__ == "__main__":
     cur = db.cursor()
     filter_name = arg[4]
 
-    cur.execute("SELECT * FROM states WHERE name=%s"
-                "ORDER BY states.id ASC;", (filter_name,))
+    cur.execute("SELECT * FROM states WHERE name='{:s}'"
+                "ORDER BY states.id ASC;".format(arg[4]))
     rows = cur.fetchall()
     for row in rows:
         print(row)
