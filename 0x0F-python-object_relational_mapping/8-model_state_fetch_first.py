@@ -16,6 +16,9 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).filter(State.id == 1)
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    if states:
+        for state in states:
+            print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
     session.close()
