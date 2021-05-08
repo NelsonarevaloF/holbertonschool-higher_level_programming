@@ -5,10 +5,10 @@ request(process.argv[2], function (err, res, body) {
     console.error(err);
     return;
   }
-  obj_json = JSON.parse(body).results;
+  const results = JSON.parse(body).results;
   let cont = 0;
-  for (let obj of obj_json) {
-    for (let str of obj.characters) {
+  for (const obj of results) {
+    for (const str of obj.characters) {
       if (str.includes('18')) {
         cont++;
       }
