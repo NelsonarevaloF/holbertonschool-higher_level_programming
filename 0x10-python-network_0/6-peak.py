@@ -12,6 +12,4 @@ def find_peak(list_of_integers):
     if list_of_integers[0] > list_of_integers[len(list_of_integers) - 1]:
         return find_peak(list_of_integers[:(len(list_of_integers) + 1)//2])
     else:
-        return find_peak(list_of_integers[(len(list_of_integers))//2:])in/bash
-# Sends a POST request with email and subjetct variable
-curl -s -X POST -d "email=hr@holbertonschool.com&subject=I will always be here for PLD" "$1"
+        return find_peak(list_of_integers[(len(list_of_integers))//2:])
